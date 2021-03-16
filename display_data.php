@@ -33,6 +33,7 @@ tr:nth-child(even) {
     <th>Last Name</th>
     <th>Email</th>
         <th>Phone</th>
+      <th>Action</th>
   </tr>
   
   <?php
@@ -48,6 +49,9 @@ while($row=pg_fetch_assoc($result)){
     <td><?php echo $row['lastname']; ?></td>
     <td><?php echo $row['email']; ?></td>
      <td><?php echo $row['phone']; ?></td>
+    
+    <td><a href="edit.php?id=<?=$row['id']?>">Edit</a></td>
+      <td><a href="#?id=<?=$row['id']?>">delete</a></td>
   </tr>
 
 <?php
