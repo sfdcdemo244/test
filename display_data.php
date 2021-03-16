@@ -33,12 +33,14 @@ $cn=1;
 while($row=pg_fetch_assoc($result)){ 
   ?>
   <tr>
+    <th>Sr.No.</th>
     <th>FirstName</th>
     <th>Last Name</th>
     <th>Email</th>
         <th>Phone</th>
   </tr>
   <tr>
+     <td><?php echo $cn; ?></td>
     <td><?php echo $row['firstname']; ?></td>
     <td><?php echo $row['lastname']; ?></td>
     <td><?php echo $row['email']; ?></td>
