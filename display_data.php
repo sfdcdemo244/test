@@ -29,8 +29,8 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Zebra Striped Table</h2>
-<p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:</p>
+<h2>Contact List</h2>
+
 
 <table>
   
