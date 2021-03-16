@@ -1,3 +1,27 @@
+<?php
+$db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbname=d9or597utqf8fr user=avhuqttulgfnie password=89cb66cc15fb996c1a7336cd971e27484e8f5499e9f21390d641343d0e727a55");
+
+if(isset($_GET['id'])){
+$id=$_GET['id'];
+  
+
+$sql=pg_query($,"delete from salesforce.contact where id='$id'");  
+
+ if ($sql) {
+         
+echo"<script>alert('Record Deleted');</script>";
+  }
+  else
+    {
+    
+         
+echo"<script>alert('Error');</script>";
+       
+    }                 
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +61,7 @@ tr:nth-child(even) {
   </tr>
   
   <?php
-$db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbname=d9or597utqf8fr user=avhuqttulgfnie password=89cb66cc15fb996c1a7336cd971e27484e8f5499e9f21390d641343d0e727a55");
+//$db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbname=d9or597utqf8fr user=avhuqttulgfnie password=89cb66cc15fb996c1a7336cd971e27484e8f5499e9f21390d641343d0e727a55");
 $result = pg_query($db,"SELECT id,firstname,lastname,email,phone FROM salesforce.contact");
 $cn=1;
 while($row=pg_fetch_assoc($result)){ 
@@ -51,7 +75,7 @@ while($row=pg_fetch_assoc($result)){
      <td><?php echo $row['phone']; ?></td>
     
     <td><a href="edit.php?id=<?=$row['id']?>">Edit</a></td>
-      <td><a href="#?id=<?=$row['id']?>">delete</a></td>
+      <td><a href="#?id=<?=$row['id']?> onclick="return confirm('Do you want to Delete');">delete</a></td>
   </tr>
 
 <?php
