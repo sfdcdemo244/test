@@ -112,6 +112,7 @@ if(isset($_POST['submit'])){
       echo "<script>window.alert('Record Created');</script>";
    }
    pg_close($db);
+}
 ?>
 
 
