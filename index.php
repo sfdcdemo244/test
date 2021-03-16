@@ -62,7 +62,7 @@ a {
     </style>
   </head>
   <body>
-    
+    <p style="font-size:20px;color:red;"><a href="display_data.php">Contact List</p>
     <form action="insert.php" method="POST">
   <div class="container">
     <h1>Register</h1>
@@ -84,7 +84,7 @@ a {
   
     <hr>
 
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+   
     <button type="submit" class="registerbtn" name="submit">Submit</button>
   </div>
 
