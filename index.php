@@ -1,6 +1,4 @@
-<?php
-include("connection.php");
-?>
+
 <html>
   <head>
     <style>
@@ -92,30 +90,5 @@ a {
 </form>
   </body>
 </html>
-
-
-<?php
-if(isset($_POST['submit'])){
-  
-  $fname=$_POST['fname'];
-   $lname=$_POST['lname'];
-   $email=$_POST['email'];
-   $mob=$_POST['mob'];
-
-  $sql =
-      INSERT INTO salesforce.contact (firstname,lastname,email,phone)
-      VALUES ($fname,$lname,$email,$mob);
-
-     
-
-   $ret = pg_query($db, $sql);
-   if(!$ret) {
-      echo pg_last_error($db);
-   } else {
-      echo "<script>window.alert('Record Created');</script>";
-   }
-   pg_close($db);
-}
-?>
 
 
