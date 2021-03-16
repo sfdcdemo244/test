@@ -5,7 +5,7 @@ if(isset($_GET['id'])){
 $id=$_GET['id'];
   
 
-$sql=pg_query($,"delete from salesforce.contact where id='$id'");  
+$sql=pg_query($db,"delete from salesforce.contact where id='$id'");  
 
  if ($sql) {
          
@@ -75,7 +75,7 @@ while($row=pg_fetch_assoc($result)){
      <td><?php echo $row['phone']; ?></td>
     
     <td><a href="edit.php?id=<?=$row['id']?>">Edit</a></td>
-      <td><a href="#?id=<?=$row['id']?> onclick="return confirm('Do you want to Delete');">delete</a></td>
+      <td><a href="delete.php?id=<?=$row['id']?> onclick="return confirm('Do you want to Delete');">delete</a></td>
   </tr>
 
 <?php
