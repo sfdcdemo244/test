@@ -26,26 +26,29 @@ tr:nth-child(even) {
 <p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:</p>
 
 <table>
+  <?php
+$db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbname=d9or597utqf8fr user=avhuqttulgfnie password=89cb66cc15fb996c1a7336cd971e27484e8f5499e9f21390d641343d0e727a55");
+$result = pg_query($db,"SELECT firstname,lastname,email,phone FROM salesforce.contact");
+$cn=1;
+while($row=pg_fetch_assoc($result)){ 
+  ?>
   <tr>
-    <th>First Name</th>
+    <th>FirstName</th>
     <th>Last Name</th>
-    <th>Points</th>
+    <th>Email</th>
+        <th>Phone</th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
+    <td><?php echo $row['firstname']; ?></td>
+    <td><?php echo $row['lastname']; ?></td>
+    <td><?php echo $row['email']; ?></td>
+     <td><?php echo $row['phone']; ?></td>
   </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>Adam</td>
-    <td>Johnson</td>
-    <td>67</td>
-  </tr>
+
+<?php
+  $cn=$cn+1;
+}
+  ?>
 </table>
 
 </body>
