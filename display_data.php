@@ -4,8 +4,8 @@ $db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbna
 if(isset($_GET['id'])){
 $id=$_GET['id'];
   
-
-$sql=pg_query($db,"delete from salesforce.contact where id='$id'");  
+$query="delete from salesforce.contact where id='$id'";
+$sql=pg_query($query);  
 
  if ($sql) {
          
