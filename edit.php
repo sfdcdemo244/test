@@ -55,7 +55,7 @@ a {
   </head>
   <body>
    
-    <form action="#" method="POST">
+    <form action="update.php" method="POST">
   <div class="container">
     <h1>Edit Record</h1>
     <p>Please fill in this form to create an Contact.</p>
@@ -66,7 +66,7 @@ $result = pg_query($db,"SELECT id,firstname,lastname,email,phone FROM salesforce
 $cn=1;
 while($row=pg_fetch_assoc($result)){ 
   ?>
- 
+ <input type="hidden"  name="id" id="id" value="<?php echo $row['id']; ?>" >
 <label for="email"><b>FirstName</b></label>
     <input type="text" placeholder="Enter FirstName" name="fname" id="fname" value="<?php echo $row['firstname']; ?>" required>
    
@@ -91,27 +91,3 @@ while($row=pg_fetch_assoc($result)){
   </body>
 </html>
 
-<?php
-
-   
-if(isset($_POST['update'])){
-
-
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
- $email=$_POST['email'];  
-   $mob=$_POST['mob'];
- $sql ="update salesforce.contact set firstname='$fname',lastname='$lname',email='$email',phone='$phone' where id ";
-
-     
-
-
-   $ret = pg_query($db, $sql);
-   if(!$ret) {
-      echo pg_last_error($db);
-   } else {
-      echo "Records created successfully\n";
-   }
-   pg_close($db);
-}
-?>
