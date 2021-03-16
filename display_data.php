@@ -75,7 +75,7 @@ while($row=pg_fetch_assoc($result)){
      <td><?php echo $row['phone']; ?></td>
     
     <td><a href="edit.php?id=<?=$row['id']?>">Edit</a></td>
-      <td><a href="#?id=<?=$row['id']?> onclick="return confirm('Do you want to Delete');">delete</a></td>
+      <td><a href="display_data.php?id=<?=$row['id']?> onclick="return confirm('Do you want to Delete');">delete</a></td>
   </tr>
 
 <?php
