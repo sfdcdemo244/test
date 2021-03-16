@@ -9,6 +9,16 @@ $host        = "host=ec2-54-145-249-177.compute-1.amazonaws.com";
    if(!$db) {
       echo "Error : Unable to open database\n";
    } else {
-      echo "Opened database successfully\n";
+      //echo "Opened database successfully\n";
    }
+
+
+
+$query = "INSERT INTO salesforce.contact(firstname, lastname, email, phone) VALUES ($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['mob'])";
+
+$result = pg_query($query); 
+
+
+
+
 ?>
