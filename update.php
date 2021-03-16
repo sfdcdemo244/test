@@ -9,7 +9,7 @@ $lname=$_POST['lname'];
  $email=$_POST['email'];  
    $mob=$_POST['mob'];
   $cid=$_POST['id'];
-   $sql ="update salesforce.contact set firstname='$fname',lastname='$lname',email='$email',phone='$phone' where id='$cid' ";
+   $sql ="update salesforce.contact set firstname='$fname',lastname='$lname',email='$email',phone='$mob' where id='$cid' ";
 
      
 
