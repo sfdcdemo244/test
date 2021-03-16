@@ -15,11 +15,10 @@
 
 
 
-   $sql =<<<EOF
-     INSERT INTO salesforce.contact(firstname,lastname,email,phone) VALUES ($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['mob']);
+   $sql ="INSERT INTO salesforce.contact(firstname,lastname,email,phone) VALUES ($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['mob'])";
 
      
-EOF;
+
 
    $ret = pg_query($db, $sql);
    if(!$ret) {
