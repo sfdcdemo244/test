@@ -1,24 +1,7 @@
 <?php
 $db = pg_connect("host=ec2-54-145-249-177.compute-1.amazonaws.com port=5432 dbname=d9or597utqf8fr user=avhuqttulgfnie password=89cb66cc15fb996c1a7336cd971e27484e8f5499e9f21390d641343d0e727a55");
 
-if(isset($_GET['id'])){
-$id=$_GET['id'];
-  
-$query="delete from salesforce.contact where id='$id'";
-$sql=pg_query($db,$query);  
 
- if ($sql) {
-         
-echo"<script>alert('Record Deleted');</script>";
-  }
-  else
-    {
-    
-         
-echo"<script>alert('Error');</script>";
-       
-    }                 
-}
 ?>
 
 
@@ -86,3 +69,23 @@ while($row=pg_fetch_assoc($result)){
 
 </body>
 </html>
+<?php
+if(isset($_GET['id'])){
+$id=$_GET['id'];
+  
+$query="delete from salesforce.contact where id='$id'";
+$sql=pg_query($db,$query);  
+
+ if ($sql) {
+         
+echo"<script>alert('Record Deleted');</script>";
+  }
+  else
+    {
+    
+         
+echo"<script>alert('Error');</script>";
+       
+    }                 
+}
+?>
