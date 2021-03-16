@@ -5,7 +5,7 @@ if(isset($_GET['id'])){
 $id=$_GET['id'];
   
 $query="delete from salesforce.contact where id='$id'";
-$sql=pg_query($query);  
+$sql=pg_query($db,$query);  
 
  if ($sql) {
          
