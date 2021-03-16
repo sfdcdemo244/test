@@ -60,7 +60,7 @@ a {
   </head>
   <body>
     
-    <form action="#" method="POST">
+    <form action="insert.php" method="POST">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an Contact.</p>
