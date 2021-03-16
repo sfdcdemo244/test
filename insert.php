@@ -4,9 +4,11 @@
 if(isset($_POST['submit'])){
 
 
-
-
-   $sql ="INSERT INTO salesforce.contact(firstname,lastname,email,phone) VALUES ('cc', 'dd', 'a@gmail.com', 89898989)";
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
+ $email=$_POST['email'];  
+   $mob=$_POST['mob'];
+   $sql ="INSERT INTO salesforce.contact(firstname,lastname,email,phone) VALUES ($fname, $lname, $email, $mob)";
 
      
 
