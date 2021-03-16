@@ -62,7 +62,7 @@ a {
     </style>
   </head>
   <body>
-    <p style="font-size:20px;color:red;"><a href="display_data.php">Contact List</p>
+    <p align="right" class="s" style="font-size:15px;color:red;"><a href="display_data.php">Contact List</p>
     <form action="insert.php" method="POST">
   <div class="container">
     <h1>Register</h1>
