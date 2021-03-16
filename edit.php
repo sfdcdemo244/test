@@ -84,7 +84,7 @@ while($row=pg_fetch_assoc($result)){
   $cn=$cn=1;
 }
   ?>
-    <button type="submit" class="registerbtn" name="submit">Submit</button>
+    <button type="submit" class="registerbtn" name="update">Submit</button>
   </div>
  
 </form>
@@ -94,14 +94,14 @@ while($row=pg_fetch_assoc($result)){
 <?php
 
    
-if(isset($_POST['submit'])){
+if(isset($_POST['update'])){
 
 
 $fname=$_POST['fname'];
 $lname=$_POST['lname'];
  $email=$_POST['email'];  
    $mob=$_POST['mob'];
-   $sql ="INSERT INTO salesforce.contact(firstname,lastname,email,phone) values('$fname','$lname','$email','$mob')";
+ $sql ="update salesforce.contact set firstname='$fname',lastname='$lname',email='$email',phone='$phone' where id ";
 
      
 
