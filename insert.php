@@ -8,7 +8,7 @@ $fname=$_POST['fname'];
 $lname=$_POST['lname'];
  $email=$_POST['email'];  
    $mob=$_POST['mob'];
-   $sql ="INSERT INTO salesforce.contact(firstname,lastname,email,phone) VALUES ($fname, $lname, $email, $mob)";
+   $sql ="INSERT INTO salesforce.contact(lastname,email,phone) VALUES ($lname, $email, $mob)";
 
      
 
